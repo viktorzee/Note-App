@@ -4,26 +4,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes App</title>
+    <link rel="stylesheet" href="/notes app/styles/styles.css">
+    <link rel="icon" href="/notes app/images/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <h1>Notes App</h1>
-    <h2>Take notes and never forget </h2>
-    <input type="text" id="search-text" placeholder="Filter Notes">
-    <select name="" id="filter-by">
-        <option value="byEdited">Sort by last edited</option>
-        <option value="byCreated">Sort by recently created</option>
-        <option value="alphabetical">Sort alphabetically</option>
-    </select>    
-    
-    <div id="notes"></div>    
-    <button id="create-note">Create new Note</button>
+    <div class="header">
+        <header class="container">
+            <h1 class="header__title">Notes App</h1>
+            <h2 class="header__subtitle">Take notes and never forget </h2>
+        </header>
+    </div>
+    <div class="action">
+        <div class="action__container">
+            <input type="text" id="search-text" class="input" placeholder="Filter Notes">
+            <select name="" id="filter-by" class="dropdown">
+                <option value="byEdited">Sort by last edited</option>
+                <option value="byCreated">Sort by recently created</option>
+                <option value="alphabetical">Sort alphabetically</option>
+            </select>  
+        </div>
+    </div>
+     
+    <div class="container">
+        <div id="notes"></div>    
+        <button id="create-note" class="button">Create new Note</button>
+    </div>
+
 
     <footer>
         <p class="note">© All Rights Reserved Created by Victor Opara</p>
     </footer>    
-    <script src="uuidv4.js"></script>
+    <script src="scripts/uuidv4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="notes-functions.js"></script>
-    <script src="notes.js"></script>
+    <script src="scripts/notes-functions.js"></script>
+    <script src="scripts/notes.js"></script>
 </body>
 </html>
