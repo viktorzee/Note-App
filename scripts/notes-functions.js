@@ -40,12 +40,12 @@ const generateNotesDom = (note) => {
     noteEl.appendChild(textEl)
 
     //setup  the link
-    textEl.setAttribute('href', `./edit.html#${note.id}`)
+    noteEl.setAttribute('href', `./edit.html#${note.id}`)
     noteEl.classList.add('list-item')
 
     //setup status message
     statusEl.textContent = generateLastEdited(note.updatedAt);
-    statusEl.classList.add('list-otem__subtitle')
+    statusEl.classList.add('list-item__subtitle')
     noteEl.appendChild(statusEl);
 
     return noteEl
@@ -67,8 +67,8 @@ const sortNotes = (notes, sortBy) => {
         })
     } else if(sortBy === 'alphabetical'){
         return notes.sort((a, b) => {
-            if(a.title.toLowerCase() > b.title.toLowerCase()) return -1
-            else if(a.title.toLowerCase() < b.title.toLowerCase()) return 1
+            if(a.title.toLowerCase() < b.title.toLowerCase()) return -1
+            else if(a.title.toLowerCase() > b.title.toLowerCase()) return 1
             else return 0
         })
     }
@@ -102,15 +102,3 @@ const renderNotes = (notes, filters) => {
 //generated Last edited
 const generateLastEdited = (timestamp) => `Last edited ${moment(timestamp).fromNow()}`
 
-/*     
-    const removeButton = document.createElement('button');
-
-    //set up the delete button
-    removeButton.textContent = 'x'
-    noteEl.appendChild(removeButton)
-    removeButton.addEventListener('click', function () {
-        removeNotes(note.id);
-        savedNotes(notes)
-        renderNotes(notes, filters)
-    })
-*/
